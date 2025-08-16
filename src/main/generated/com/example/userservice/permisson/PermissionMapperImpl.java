@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-07T13:17:31+0700",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)"
+    date = "2025-08-14T09:08:14+0700",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Microsoft)"
 )
 @Component
 public class PermissionMapperImpl implements PermissionMapper {
@@ -33,13 +33,13 @@ public class PermissionMapperImpl implements PermissionMapper {
             return null;
         }
 
-        PermissionResponse permissionResponse = new PermissionResponse();
+        PermissionResponse.PermissionResponseBuilder permissionResponse = PermissionResponse.builder();
 
-        permissionResponse.setId( permission.getId() );
-        permissionResponse.setName( permission.getName() );
-        permissionResponse.setDescription( permission.getDescription() );
+        permissionResponse.id( permission.getId() );
+        permissionResponse.name( permission.getName() );
+        permissionResponse.description( permission.getDescription() );
 
-        return permissionResponse;
+        return permissionResponse.build();
     }
 
     @Override

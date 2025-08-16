@@ -119,6 +119,8 @@ public class UserService {
     }
 
     public List<UserResponse> getAll() {
+
+        
         var user = userRepository.findAll();
         if (user.isEmpty()) {
             throw new AppException(ErrorCode.USER_NOT_FOUND);
